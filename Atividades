@@ -1,0 +1,64 @@
+class Pessoa:
+    def __init__ (self,nome,peso,idade):
+        self.nome = nome
+        self.peso = peso
+        self.idade = idade
+        self.comendo = False
+        self.falando = False
+        self.dormindo = False
+
+
+    def comer(self):
+        if self.comendo == True:
+            print(f"{self.nome} já ta comendo!")
+        elif self.falando == True:
+            print(f"{self.nome} não pode comer pois está falando.")
+        elif self.dormindo == True:
+            print(f"{self.nome} não pode comer pois está dormindo.")
+        else:
+            print(self.nome + " foi comer!")
+            self.comendo = True
+
+    def falar(self):
+        if self.falando == True:
+            print(f"{self.nome} já ta falando!")
+        elif self.comendo == True:
+            print(f"{self.nome} não pode falar pois está comendo.")
+        elif self.dormindo == True:
+            print(f"{self.nome} não pode falar pois está dormindo.")
+        else:
+            print(self.nome, "está andando!")
+            self.falando = True
+
+
+    def dormir(self):
+        if self.dormindo == True:
+            print(f"{self.nome} já ta dormindo!")
+        elif self.comendo == True:
+            print(f"{self.nome} não pode dormir pois está comendo.")
+        elif self.falando == True:
+            print(f"{self.nome} não pode dormir pois está falando.")
+        else:
+            print(f"{self.nome} foi dormir!")
+            self.dormindo= True
+
+    def pararDeComer(self):
+        if self.comendo == False:
+            print(f"{self.nome} não pode parar de comer pois não estava comendo.")
+        if self.comendo == True:
+            self.comendo = False
+
+    def acordar(self):
+        if self.dormindo == False:
+            print(f"{self.nome} não pode acordar pois não estava dormindo.")
+        if self.dormindo == True:
+            self.dormindo = False
+
+    def pararDeFalar(self):
+        if self.falando == False:
+            print(f"{self.nome} não pode parar de falar pois não estava falando,0.")
+        if self.falando == True:
+            self.falando = False
+
+    def apresentar(self):
+        print(f"Olá! meu nome é {self.nome} \ntenho {self.idade} anos \npeso {self.peso} kilogramas.") 
